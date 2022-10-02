@@ -1,0 +1,27 @@
+[
+   {
+      "name":"libIPFS",
+      "url":"https://github.com/scala-network/libipfs",
+      "desc":"A C-style library library that wraps around go-ipfs as a library."
+   },
+   {
+      "name":"Felidae",
+      "url":"https://github.com/scala-network/libipfs",
+      "desc":"Fast proof-of-work algorithm built on top of SHA-3 and Blake3."
+   },
+   {
+      "name":"Scala Network",
+      "url":"https://scalaproject.io",
+      "desc":"A cryptocurrency project which targets mobile based mining."
+   },
+   {
+       "name":"RadRugs",
+       "url":"http://radrugs.io",
+       "desc":"Analysis platform for NFTs and other smart contracts."
+    },
+    {
+      "name":"SOL Wallet Adapter",
+      "url":"https://github.com/AlchemillaHQ/vanilla-wallet-adapter",
+      "desc":"An adapter for solana wallets that can be used with VanillaJS."
+    }
+]
