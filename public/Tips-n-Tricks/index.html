@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="Tips n’ TricksThis page contains a collection of all the tips and tricks I use to get my work done faster. I use Debian as my distro as choice so all the commands here will be skewed in favor of it. F">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tips n&#39; Tricks">
+<meta property="og:url" content="https://hayzam.com/Tips-n-Tricks/index.html">
+<meta property="og:site_name" content="Hayzam">
+<meta property="og:description" content="Tips n’ TricksThis page contains a collection of all the tips and tricks I use to get my work done faster. I use Debian as my distro as choice so all the commands here will be skewed in favor of it. F">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-08-18T21:32:16.000Z">
+<meta property="article:modified_time" content="2022-08-27T00:22:47.234Z">
+<meta property="article:author" content="Hayzam Sherif">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>Tips n&#39; Tricks</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+    <div class="content index py4">
+        
+          <header id="header">
+  <a href="/">
+  
+    
+      <div id="logo" style="background-image: url(/images/logo.png);"></div>
+    
+  
+    <div id="title">
+      <h1>Hayzam</h1>
+    </div>
+  </a>
+  <div id="nav">
+    <ul>
+      <li class="icon">
+        <a href="#" aria-label="Menu"><i class="fas fa-bars fa-2x"></i></a>
+      </li>
+      <!--
+     --><li><a href="/">Home</a></li><!--
+   --><!--
+     --><li><a href="/about/">About</a></li><!--
+   --><!--
+     --><li><a href="/archives/">Writing</a></li><!--
+   --><!--
+     --><li><a target="_blank" rel="noopener" href="http://github.com/hayzamjs">Projects</a></li><!--
+   --><!--
+     --><li><a href="/Tips-n-Tricks/">Tips</a></li><!--
+   -->
+    </ul>
+  </div>
+</header>
+
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  
+
+  <div class="content" itemprop="articleBody">
+      
+          <h1 id="Tips-n’-Tricks"><a href="#Tips-n’-Tricks" class="headerlink" title="Tips n’ Tricks"></a>Tips n’ Tricks</h1><p>This page contains a collection of all the tips and tricks I use to get my work done faster. I use Debian as my distro as choice so all the commands here will be skewed in favor of it.</p>
+<h2 id="FFMPEG"><a href="#FFMPEG" class="headerlink" title="FFMPEG"></a>FFMPEG</h2><h3 id="Convert-MKV-to-MP4"><a href="#Convert-MKV-to-MP4" class="headerlink" title="Convert MKV to MP4"></a>Convert MKV to MP4</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg –i input.mkv –c:v h264 output.mp4</span><br></pre></td></tr></table></figure>
+
+<h3 id="Convert-MP4-to-MP4"><a href="#Convert-MP4-to-MP4" class="headerlink" title="Convert MP4 to MP4"></a>Convert MP4 to MP4</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mp4 -vn -acodec mp3 -ab 320k -ar 44100 -ac 2 output.mp3</span><br></pre></td></tr></table></figure>
+
+<h3 id="Convert-MP4-to-WAV"><a href="#Convert-MP4-to-WAV" class="headerlink" title="Convert MP4 to WAV"></a>Convert MP4 to WAV</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mp4 output.wav</span><br></pre></td></tr></table></figure>
+
+<h3 id="Convert-MP4-to-PNGs"><a href="#Convert-MP4-to-PNGs" class="headerlink" title="Convert MP4 to PNGs"></a>Convert MP4 to PNGs</h3><p>Output one image every second:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mp4 -vf fps=1 out%d.png</span><br></pre></td></tr></table></figure>
+
+<p>Output one image every minute:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i test.mp4 -vf fps=1/60 thumb%04d.png</span><br></pre></td></tr></table></figure>
+
+<p>Output one image 10 minutes:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i test.mp4 -vf fps=1/600 thumb%04d.png</span><br></pre></td></tr></table></figure>
+
+<h2 id="Find-and-Replace"><a href="#Find-and-Replace" class="headerlink" title="Find and Replace"></a>Find and Replace</h2><h3 id="Find-and-replace-a-string-with-folder-exclusions"><a href="#Find-and-replace-a-string-with-folder-exclusions" class="headerlink" title="Find and replace a string with folder exclusions"></a>Find and replace a string with folder exclusions</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find ./ -<span class="built_in">type</span> f -not -path <span class="string">&#x27;/.&#x27;</span> -not -path <span class="string">&quot;./exclude/*&quot;</span> -readable -writable -<span class="built_in">exec</span> sed -i <span class="string">&quot;s/bad/good/g&quot;</span> &#123;&#125; \;</span><br></pre></td></tr></table></figure>
+
+<p>This will exclude all folders starting with ‘.&#x2F;‘ which includes stuff like .git and also other folders like ‘.&#x2F;exclude&#x2F;‘, change to your liking accordingly.</p>
+<h2 id="Node-and-NPM"><a href="#Node-and-NPM" class="headerlink" title="Node and NPM"></a>Node and NPM</h2><h3 id="Install-nvm"><a href="#Install-nvm" class="headerlink" title="Install nvm"></a>Install nvm</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash</span><br></pre></td></tr></table></figure>
+
+<h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><h3 id="Initialize-and-update-submodules"><a href="#Initialize-and-update-submodules" class="headerlink" title="Initialize and update submodules"></a>Initialize and update submodules</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git submodule update --init</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="Remove-a-Submodule"><a href="#Remove-a-Submodule" class="headerlink" title="Remove a Submodule"></a>Remove a Submodule</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git submodule deinit &lt;path_to_submodule&gt;</span><br><span class="line">git <span class="built_in">rm</span> &lt;path_to_submodule&gt;</span><br><span class="line">git commit -m <span class="string">&quot;Removed submodule&quot;</span></span><br><span class="line"><span class="built_in">rm</span> -rf .git/modules/&lt;path_to_submodule&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Cache-Authentication-token-for-20-hours"><a href="#Cache-Authentication-token-for-20-hours" class="headerlink" title="Cache Authentication token for 20 hours"></a>Cache Authentication token for 20 hours</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git-credential-manager-core configure</span><br><span class="line">git config --global credential.credentialStore cache</span><br><span class="line">git config --global credential.cacheoptions <span class="string">&quot;--timeout 72000&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Convert-files"><a href="#Convert-files" class="headerlink" title="Convert files"></a>Convert files</h2><p>You need <code>imagemagick</code> for the <code>convert</code> command</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install imagemagick</span><br></pre></td></tr></table></figure>
+
+<h3 id="PNGs-to-JPEGs"><a href="#PNGs-to-JPEGs" class="headerlink" title="PNGs to JPEGs"></a>PNGs to JPEGs</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">convert input.png -quality 90 output.jpg</span><br></pre></td></tr></table></figure>
+
+<p>To convert all the png files in a directory to jpegs:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mogrify -format jpg *.png</span><br></pre></td></tr></table></figure>
+
+<h2 id="Miscellaneous"><a href="#Miscellaneous" class="headerlink" title="Miscellaneous"></a>Miscellaneous</h2><h3 id="Get-your-current-IP-address"><a href="#Get-your-current-IP-address" class="headerlink" title="Get your current IP address"></a>Get your current IP address</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl icanhazip.com</span><br></pre></td></tr></table></figure>
+
+<h3 id="Rename-all-the-files-of-an-extension-in-sequential-order"><a href="#Rename-all-the-files-of-an-extension-in-sequential-order" class="headerlink" title="Rename all the files of an extension in sequential order"></a>Rename all the files of an extension in sequential order</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ls</span> | <span class="built_in">cat</span> -n | <span class="keyword">while</span> <span class="built_in">read</span> n f; <span class="keyword">do</span> <span class="built_in">mv</span> <span class="string">&quot;<span class="variable">$f</span>&quot;</span> <span class="string">&quot;<span class="variable">$n</span>.jpg&quot;</span>; <span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+
+        
+  </div>
+</article>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2022
+    Hayzam Sherif
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="http://github.com/hayzamjs">Projects</a></li><!--
+     --><!--
+       --><li><a href="/Tips-n-Tricks/">Tips</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-25032864-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-25032864-1');
+    </script>
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>
