@@ -148,15 +148,15 @@ disqus:
 
 # Fill in your Utterances data to enable Utterances comments
 utterances:
-  enabled: false
-  repo: owner/githubrepo
+  enabled: true
+  repo: hayzamjs/hayzam.com
   issue_term: pathname
   label: Comment
   theme: github-dark
 
 # Fill in your Google Analytics tracking ID to enable Google Analytics.
 google_analytics:
-  enabled: true
+  enabled: false
   id: UA-25032864-1
 
 # Fill in your Baidu Analytics tracking ID to enable Baidu Analytics.
@@ -171,9 +171,9 @@ cloudflare_analytics:
 
 # Fill in your Umami Analytics tracking ID to enable Umami Analytics.
 umami_analytics:
-  enabled: false
-  id: e77e68be-f6e4-4br3-9365-2b76b57cd571
-  host: https://analytics.domain.com
+  enabled: true
+  id: c6ed6867-9b1f-474d-82ad-075972a5aa2b
+  host: https://analytics.hayzam.com
 
 # Fill in you Gravatar email or hash if you want to use your gravatar as the
 # logo and/or favicons of you website.
@@ -184,7 +184,7 @@ gravatar:
 
 # loads libraries and styles from CDN instead or relying on local files
 cdn:
-  enable: true
+  enable: false
   jquery: https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js
   clipboard: https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js
   font_awesome: https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css

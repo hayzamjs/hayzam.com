@@ -1,8 +1,13 @@
 [
    {
+      "name":"Difuse",
+      "url":"https://difuse.io",
+      "desc":"Multi service business gateway for SMEs"
+   },
+   {
       "name":"libIPFS",
       "url":"https://github.com/scala-network/libipfs",
-      "desc":"A C-style library library that wraps around go-ipfs as a library."
+      "desc":"C-style library library that wraps around go-ipfs as a library."
    },
    {
       "name":"Felidae",
@@ -12,7 +17,7 @@
    {
       "name":"Scala Network",
       "url":"https://scalaproject.io",
-      "desc":"A cryptocurrency project which targets mobile based mining."
+      "desc":"Cryptocurrency project which targets mobile based mining."
    },
    {
        "name":"RadRugs",
