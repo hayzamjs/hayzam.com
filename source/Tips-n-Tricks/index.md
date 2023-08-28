@@ -124,3 +124,15 @@ To convert all the png files in a directory to jpegs:
 ```bash
 	ls | cat -n | while read n f; do mv "$f" "$n.jpg"; done
 ```
+
+### Solving bluetooth woes on Debian 12
+
+I was having a lot of trouble with my Sony WL-XB400 bluetooth headphones on Debian 12. I was able to pair them but only the handsfree option showed up which is not ideal as it's not very good for listening to music. I tried a lot of things but nothing worked. Finally I found a solution that worked for me.
+
+```
+sudo apt purge pulseaudio-module-bluetooth bluetooth "bluez-*" bluez
+rm -rf /var/lib/blueman && rm -rf /var/lib/bluetooth
+sudo apt install blueman bluez pulseaudio-module-bluetooth --install-suggests
+```
+
+This made everything work almost instantly. I was able to pair my headphones and the A2DP option showed up. I was able to listen to music and watch videos without any issues.
