@@ -13,8 +13,8 @@
 <meta property="og:site_name" content="Hayzam">
 <meta property="og:description" content="Tips n’ TricksThis page contains a collection of all the tips and tricks I use to get my work done faster. I use Debian as my distro as choice so all the commands here will be skewed in favor of it. F">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-08-18T23:32:16.000Z">
-<meta property="article:modified_time" content="2022-10-02T22:28:25.201Z">
+<meta property="article:published_time" content="2022-08-18T18:02:16.000Z">
+<meta property="article:modified_time" content="2023-08-28T21:56:06.214Z">
 <meta property="article:author" content="Hayzam Sherif">
 <meta name="twitter:card" content="summary">
     
@@ -130,6 +130,11 @@
 <h2 id="Miscellaneous"><a href="#Miscellaneous" class="headerlink" title="Miscellaneous"></a>Miscellaneous</h2><h3 id="Get-your-current-IP-address"><a href="#Get-your-current-IP-address" class="headerlink" title="Get your current IP address"></a>Get your current IP address</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl icanhazip.com</span><br></pre></td></tr></table></figure>
 
 <h3 id="Rename-all-the-files-of-an-extension-in-sequential-order"><a href="#Rename-all-the-files-of-an-extension-in-sequential-order" class="headerlink" title="Rename all the files of an extension in sequential order"></a>Rename all the files of an extension in sequential order</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ls</span> | <span class="built_in">cat</span> -n | <span class="keyword">while</span> <span class="built_in">read</span> n f; <span class="keyword">do</span> <span class="built_in">mv</span> <span class="string">&quot;<span class="variable">$f</span>&quot;</span> <span class="string">&quot;<span class="variable">$n</span>.jpg&quot;</span>; <span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Solving-bluetooth-woes-on-Debian-12"><a href="#Solving-bluetooth-woes-on-Debian-12" class="headerlink" title="Solving bluetooth woes on Debian 12"></a>Solving bluetooth woes on Debian 12</h3><p>I was having a lot of trouble with my Sony WL-XB400 bluetooth headphones on Debian 12. I was able to pair them but only the handsfree option showed up which is not ideal as it’s not very good for listening to music. I tried a lot of things but nothing worked. Finally I found a solution that worked for me.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt purge pulseaudio-module-bluetooth bluetooth <span class="string">&quot;bluez-*&quot;</span> bluez</span><br><span class="line"><span class="built_in">rm</span> -rf /var/lib/blueman &amp;&amp; <span class="built_in">rm</span> -rf /var/lib/bluetooth</span><br><span class="line">sudo apt install blueman bluez pulseaudio-module-bluetooth --install-suggests</span><br></pre></td></tr></table></figure>
+
+<p>This made everything work almost instantly. I was able to pair my headphones and the A2DP option showed up. I was able to listen to music and watch videos without any issues.</p>
 
         
   </div>

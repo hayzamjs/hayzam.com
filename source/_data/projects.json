@@ -1,10 +1,5 @@
 [
    {
-      "name":"Difuse",
-      "url":"https://difuse.io",
-      "desc":"Multi service business gateway for SMEs"
-   },
-   {
       "name":"libIPFS",
       "url":"https://github.com/scala-network/libipfs",
       "desc":"C-style library library that wraps around go-ipfs as a library."
