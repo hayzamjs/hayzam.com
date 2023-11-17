@@ -20,16 +20,19 @@ nav:
   projects: http://github.com/hayzamjs
   Tips: /Tips-n-Tricks/
 
-
-# Links to your social media accounts.
-# The keys should correspond to Fontawesome icon names
-# (see https://fontawesome.com/icons?d=gallery&s=brands);
-# only 'mail' is an exception.
 social_links:
-  github: http://github.com/hayzamjs/
-  twitter: https://twitter.com/hayzam_js
-  linkedin: https://www.linkedin.com/in/hayzam-s-2b9b95139/
-  mail: mailto:hayzam@gmail.com
+  -
+    icon: github
+    link: https://github.com/hayzamjs/
+  -
+    icon: twitter
+    link: https://twitter.com/hayzam_js
+  -
+    icon: mail
+    link: mailto:hayzam@gmail.com
+  -
+    icon: linkedin
+    link: https://www.linkedin.com/in/hayzam-s-2b9b95139/
 
 # Customize the overview with displaying a tagcloud on the index page.
 # Options: https://hexo.io/docs/helpers.html#tagcloud
