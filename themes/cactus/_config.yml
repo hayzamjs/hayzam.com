@@ -20,19 +20,16 @@ nav:
   projects: http://github.com/hayzamjs
   Tips: /Tips-n-Tricks/
 
+
+# Links to your social media accounts.
+# The keys should correspond to Fontawesome icon names
+# (see https://fontawesome.com/icons?d=gallery&s=brands);
+# only 'mail' is an exception.
 social_links:
-  -
-    icon: github
-    link: https://github.com/hayzamjs/
-  -
-    icon: twitter
-    link: https://twitter.com/hayzam_js
-  -
-    icon: mail
-    link: mailto:hayzam@gmail.com
-  -
-    icon: linkedin
-    link: https://www.linkedin.com/in/hayzam-s-2b9b95139/
+  github: http://github.com/hayzamjs/
+  twitter: https://twitter.com/hayzam_js
+  linkedin: https://www.linkedin.com/in/hayzam-s-2b9b95139/
+  mail: mailto:hayzam@gmail.com
 
 # Customize the overview with displaying a tagcloud on the index page.
 # Options: https://hexo.io/docs/helpers.html#tagcloud
@@ -177,7 +174,6 @@ umami_analytics:
   enabled: true
   id: c6ed6867-9b1f-474d-82ad-075972a5aa2b
   host: https://analytics.hayzam.com
-  script_name: umami.js
 
 # Fill in you Gravatar email or hash if you want to use your gravatar as the
 # logo and/or favicons of you website.

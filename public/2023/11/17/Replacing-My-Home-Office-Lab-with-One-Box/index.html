@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="The Initial Setup at Alchemilla.ioAt my software solutions startup, Alchemilla.io, I had set up what I’d call an office-lab—though it feels a bit odd to say, compared to the usual ‘homelab’. This setu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Replacing My Home&#x2F;Office Lab with One Box">
+<meta property="og:url" content="https://hayzam.com/2023/11/17/Replacing-My-Home-Office-Lab-with-One-Box/index.html">
+<meta property="og:site_name" content="Hayzam">
+<meta property="og:description" content="The Initial Setup at Alchemilla.ioAt my software solutions startup, Alchemilla.io, I had set up what I’d call an office-lab—though it feels a bit odd to say, compared to the usual ‘homelab’. This setu">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.imgur.com/oj26dLa.jpg">
+<meta property="og:image" content="https://i.imgur.com/ElLOva5.png">
+<meta property="og:image" content="https://i.imgur.com/vAeVJDR.png">
+<meta property="og:image" content="https://i.imgur.com/WnddSN1.png">
+<meta property="og:image" content="https://i.imgur.com/oiODhba.png">
+<meta property="og:image" content="https://i.imgur.com/95ztNjv.png">
+<meta property="og:image" content="https://i.imgur.com/vzq4aoy.png">
+<meta property="og:image" content="https://i.imgur.com/vKF3I9v.png">
+<meta property="article:published_time" content="2023-11-17T17:50:42.000Z">
+<meta property="article:modified_time" content="2023-11-17T20:57:39.492Z">
+<meta property="article:author" content="Hayzam Sherif">
+<meta property="article:tag" content="homelab, firewall, openwrt, router, adguard, wireguard">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/oj26dLa.jpg">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>Replacing My Home/Office Lab with One Box</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="http://github.com/hayzamjs">Projects</a></li><!--
+     --><!--
+       --><li><a href="/Tips-n-Tricks/">Tips</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2023/08/29/Ludonarrative-Dissonance-The-Dance-Between-Play-and-Parable/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://hayzam.com/2023/11/17/Replacing-My-Home-Office-Lab-with-One-Box/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://hayzam.com/2023/11/17/Replacing-My-Home-Office-Lab-with-One-Box/&text=Replacing My Home/Office Lab with One Box"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://hayzam.com/2023/11/17/Replacing-My-Home-Office-Lab-with-One-Box/&title=Replacing My Home/Office Lab with One Box"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://hayzam.com/2023/11/17/Replacing-My-Home-Office-Lab-with-One-Box/&is_video=false&description=Replacing My Home/Office Lab with One Box"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Replacing My Home/Office Lab with One Box&body=Check out this article: https://hayzam.com/2023/11/17/Replacing-My-Home-Office-Lab-with-One-Box/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://hayzam.com/2023/11/17/Replacing-My-Home-Office-Lab-with-One-Box/&title=Replacing My Home/Office Lab with One Box"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://hayzam.com/2023/11/17/Replacing-My-Home-Office-Lab-with-One-Box/&title=Replacing My Home/Office Lab with One Box"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://hayzam.com/2023/11/17/Replacing-My-Home-Office-Lab-with-One-Box/&title=Replacing My Home/Office Lab with One Box"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://hayzam.com/2023/11/17/Replacing-My-Home-Office-Lab-with-One-Box/&title=Replacing My Home/Office Lab with One Box"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://hayzam.com/2023/11/17/Replacing-My-Home-Office-Lab-with-One-Box/&name=Replacing My Home/Office Lab with One Box&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://hayzam.com/2023/11/17/Replacing-My-Home-Office-Lab-with-One-Box/&t=Replacing My Home/Office Lab with One Box"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#The-Initial-Setup-at-Alchemilla-io"><span class="toc-number">1.</span> <span class="toc-text">The Initial Setup at Alchemilla.io</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Confronting-the-Challenges"><span class="toc-number">2.</span> <span class="toc-text">Confronting the Challenges</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Tackling-Hardware-Issues"><span class="toc-number">2.1.</span> <span class="toc-text">Tackling Hardware Issues</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Software-Struggles"><span class="toc-number">2.2.</span> <span class="toc-text">Software Struggles</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Exploring-Alternative-Solutions"><span class="toc-number">3.</span> <span class="toc-text">Exploring Alternative Solutions</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Evaluating-New-Devices"><span class="toc-number">3.1.</span> <span class="toc-text">Evaluating New Devices</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Realizing-Software%E2%80%99s-Central-Role"><span class="toc-number">4.</span> <span class="toc-text">Realizing Software’s Central Role</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#The-Intuitiveness-Dilemma"><span class="toc-number">4.1.</span> <span class="toc-text">The Intuitiveness Dilemma</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Collaborative-Efforts-in-Innovation"><span class="toc-number">5.</span> <span class="toc-text">Collaborative Efforts in Innovation</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Venturing-into-Multi-Service-Business-Gateway"><span class="toc-number">5.1.</span> <span class="toc-text">Venturing into Multi-Service Business Gateway</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Hardware-Considerations"><span class="toc-number">5.1.1.</span> <span class="toc-text">Hardware Considerations</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Software-Perspectives"><span class="toc-number">5.1.2.</span> <span class="toc-text">Software Perspectives</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Introducing-Difuse"><span class="toc-number">6.</span> <span class="toc-text">Introducing Difuse</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Developing-a-New-Interface"><span class="toc-number">6.1.</span> <span class="toc-text">Developing a New Interface</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#The-Initial-Prototype"><span class="toc-number">6.2.</span> <span class="toc-text">The Initial Prototype</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Where-We-Are-Now"><span class="toc-number">6.3.</span> <span class="toc-text">Where We Are Now</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Everything-is-just-a-click-away"><span class="toc-number">6.4.</span> <span class="toc-text">Everything is just a click away</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Adguard-Home"><span class="toc-number">7.</span> <span class="toc-text">Adguard Home</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hassle-free-policy-based-routes"><span class="toc-number">8.</span> <span class="toc-text">Hassle-free policy based routes</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Simple-yet-powerful-firewall"><span class="toc-number">9.</span> <span class="toc-text">Simple yet powerful firewall</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Multiple-VPN-Support"><span class="toc-number">10.</span> <span class="toc-text">Multiple VPN Support</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Let%E2%80%99s-Encrypt-Certificates-amp-Dynamic-DNS"><span class="toc-number">11.</span> <span class="toc-text">Let’s Encrypt Certificates &amp; Dynamic DNS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Additional-Services"><span class="toc-number">12.</span> <span class="toc-text">Additional Services</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PBX-Features"><span class="toc-number">13.</span> <span class="toc-text">PBX Features</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Upcoming-Developments"><span class="toc-number">14.</span> <span class="toc-text">Upcoming Developments</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Conclusion"><span class="toc-number">15.</span> <span class="toc-text">Conclusion</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Replacing My Home/Office Lab with One Box
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Hayzam Sherif</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-11-17T17:50:42.000Z" itemprop="datePublished">2023-11-17</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/tags/homelab-firewall-openwrt-router-adguard-wireguard/" rel="tag">homelab, firewall, openwrt, router, adguard, wireguard</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h2 id="The-Initial-Setup-at-Alchemilla-io"><a href="#The-Initial-Setup-at-Alchemilla-io" class="headerlink" title="The Initial Setup at Alchemilla.io"></a>The Initial Setup at Alchemilla.io</h2><p>At my software solutions startup, <a target="_blank" rel="noopener" href="https://alchemilla.io/">Alchemilla.io</a>, I had set up what I’d call an office-lab—though it feels a bit odd to say, compared to the usual ‘homelab’. This setup ran on multiple devices:</p>
+<ul>
+<li><p><strong>An old Dell Optiplex with a 3rd generation i5 and 8GB of RAM, operating on Debian.</strong></p>
+<img src="https://i.imgur.com/oj26dLa.jpg" alt="A cat with an Optiplex attached" width="200"/>
+
+<p>This machine was the workhorse for running various services. It hosted multiple Docker containers for tools like AdGuard Home, OPNSense, PiVPN for WireGuard, and some other simple scripts. I even set up a Cloudflare tunnel, given our CGNAT constraints.</p>
+</li>
+<li><p><strong>A TP-Link AP (AX3000)</strong></p>
+<p>This router served as the office’s sole wireless access point. It was tethered to the OPNSense box via a NIC and functioned as a ‘dumb AP’.</p>
+</li>
+<li><p><strong>A SIM gateway</strong></p>
+<p>This was intended to enable the use of a 4G connection as a backup. However, I never actually utilized this feature because OPNSense had compatibility issues with it. Additionally, it was meant to provide call and text functionality for the associated number.</p>
+</li>
+</ul>
+<h2 id="Confronting-the-Challenges"><a href="#Confronting-the-Challenges" class="headerlink" title="Confronting the Challenges"></a>Confronting the Challenges</h2><h3 id="Tackling-Hardware-Issues"><a href="#Tackling-Hardware-Issues" class="headerlink" title="Tackling Hardware Issues"></a>Tackling Hardware Issues</h3><p>The hardware setup posed several issues. Firstly, the Dell Optiplex was a significant power consumer. My pre-setup electricity bills were around $100 a month, but post-setup, they jumped to about $150. The TP-Link AP also had its quirks; it would occasionally lose connection to the OPNSense box, requiring a reboot to resolve the issue. Additionally, it had intermittent problems like the 5GHz band occasionally failing and the 2.4GHz band’s sluggish performance.</p>
+<p>Another concern was the Dell Optiplex’s design. Originally intended as a desktop, it was loud and prone to overheating. I had to stash it in a closet to mitigate the noise, but this only exacerbated the overheating issue.</p>
+<h3 id="Software-Struggles"><a href="#Software-Struggles" class="headerlink" title="Software Struggles"></a>Software Struggles</h3><p>My software choices were predominantly open-source, with the exception of the TP-Link AP and Cloudflare tunnels&#x2F;Tailscale (which is semi-open-source). Performance-wise, I encountered no significant issues. However, the ongoing maintenance of updating operating systems, containers, and the like was becoming burdensome. I desired a seamless operation, but despite the individual strengths of each component, the overall setup lacked cohesion.</p>
+<h2 id="Exploring-Alternative-Solutions"><a href="#Exploring-Alternative-Solutions" class="headerlink" title="Exploring Alternative Solutions"></a>Exploring Alternative Solutions</h2><h3 id="Evaluating-New-Devices"><a href="#Evaluating-New-Devices" class="headerlink" title="Evaluating New Devices"></a>Evaluating New Devices</h3><p>I considered several options to address the issues I was facing:</p>
+<ol>
+<li><p><strong>Replacing the Dell Optiplex with a more power-efficient machine</strong>: This seemed like a straightforward solution, but it wouldn’t solve the software maintenance problems I was experiencing.</p>
+</li>
+<li><p><strong>Upgrading the TP-Link AP to a more reliable model</strong>: While this might fix the connectivity issues, it wouldn’t address the challenges posed by the Dell Optiplex.</p>
+</li>
+<li><p><strong>Switching to a more compatible SIM gateway</strong>: This could potentially improve the 4G backup functionality, but again, it wouldn’t resolve the Optiplex’s problems.</p>
+</li>
+</ol>
+<p>In short, it was a complicated situation. I did explore some promising devices:</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.raspberrypi.org/products/raspberry-pi-4-model-b/">Raspberry Pi 4</a></li>
+<li><a target="_blank" rel="noopener" href="https://shop.netgate.com/products/1100-pfsense">Netgate 1100</a></li>
+<li><a target="_blank" rel="noopener" href="https://shop.opnsense.com/product/dec675-opnsense-desktop-security-appliance/">OPNsense DEC675</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.turris.com/en/products/omnia/">Turris Omnia</a></li>
+</ul>
+<p>These are all capable products, but the thought of juggling various software components to make them work together was daunting. I was leaning towards a more plug-and-play solution, requiring minimal intervention post-setup.</p>
+<p><strong>A Closer Look at Turris Omnia</strong>:</p>
+<p>The Turris Omnia caught my attention, but it had its drawbacks. The cost was a bit steep relative to its specs, particularly since I was now looking for a solution with robust PBX functionality. The Omnia’s 2-core CPU seemed underpowered for my needs. While its software is open-source and well-designed, it lacked key features I was seeking. Additionally, the prospect of configuring a PBX system on it seemed more hassle than it was worth.</p>
+<h2 id="Realizing-Software’s-Central-Role"><a href="#Realizing-Software’s-Central-Role" class="headerlink" title="Realizing Software’s Central Role"></a>Realizing Software’s Central Role</h2><h3 id="The-Intuitiveness-Dilemma"><a href="#The-Intuitiveness-Dilemma" class="headerlink" title="The Intuitiveness Dilemma"></a>The Intuitiveness Dilemma</h3><p>I came to understand that my challenges with software intuitiveness would remain, regardless of the hardware choice. I’m aware that “intuitiveness” can be subjective, but for my needs, it meant being able to provision WireGuard clients, configure firewall rules, and set up and edit my PBX configuration with minimal effort. These are tasks I frequently engage in, and I desired a more streamlined process for handling them.</p>
+<h2 id="Collaborative-Efforts-in-Innovation"><a href="#Collaborative-Efforts-in-Innovation" class="headerlink" title="Collaborative Efforts in Innovation"></a>Collaborative Efforts in Innovation</h2><h3 id="Venturing-into-Multi-Service-Business-Gateway"><a href="#Venturing-into-Multi-Service-Business-Gateway" class="headerlink" title="Venturing into Multi-Service Business Gateway"></a>Venturing into Multi-Service Business Gateway</h3><p>Around this time, my friends, who were also experiencing configuration fatigue, showed interest in creating a <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Multi-service_business_gateway">multi-service business gateway</a>. This concept was new to me, so I had to look it up. It turned out to be precisely the kind of system I envisioned for my own office. However, our interests diverged slightly: they were more focused on the hardware aspects, while my curiosity leaned towards the software side. Recognizing our complementary perspectives, we decided to collaborate on this project.</p>
+<h4 id="Hardware-Considerations"><a href="#Hardware-Considerations" class="headerlink" title="Hardware Considerations"></a>Hardware Considerations</h4><p>Finding a high-quality ARM-based router board that met our specific requirements proved to be more challenging than anticipated. While there are numerous options available in the market, identifying a vendor that offered a board with at least a 4-core CPU and 2 GB of RAM, along with official support for OpenWRT, required diligent searching. However, after a thorough evaluation of various suppliers, we were fortunate to find one that not only satisfied our specifications but also instilled confidence in their product’s quality and reliability.</p>
+<h4 id="Software-Perspectives"><a href="#Software-Perspectives" class="headerlink" title="Software Perspectives"></a>Software Perspectives</h4><p>As I previously mentioned, OpenWRT was our preferred choice for embedded systems, and arguably the only feasible option. It’s a common misconception that OpenWRT is just “router firmware,” but it’s actually much more. OpenWRT is a full-fledged Linux distribution with a package manager and a web interface, and it’s one of the most widely-used embedded Linux distributions, supported by a large community and a vast array of available packages.</p>
+<p>While the operating system itself was ideal, its management GUI, although functional, left something to be desired. The structure of LUCI and UCI (the underlying configuration interface) is commendable, enabling configuration through an RPC endpoint without requiring LUCI or command-line interaction. However, the user interface felt outdated and lacked the intuitiveness we were aiming for. Our goal was to develop a more modern, intuitive, and user-friendly interface for OpenWRT.</p>
+<h2 id="Introducing-Difuse"><a href="#Introducing-Difuse" class="headerlink" title="Introducing Difuse"></a>Introducing Difuse</h2><h3 id="Developing-a-New-Interface"><a href="#Developing-a-New-Interface" class="headerlink" title="Developing a New Interface"></a>Developing a New Interface</h3><p>Armed with my knowledge of being able to control the entire system with the RPC endpoint, I set out to create a new interface. I wanted to build something that would be easy to use and maintain, and that would allow me to configure the system without having to use the command line. I also wanted to be able to easily add new features and functionality to the system without having to rewrite the entire interface.</p>
+<h3 id="The-Initial-Prototype"><a href="#The-Initial-Prototype" class="headerlink" title="The Initial Prototype"></a>The Initial Prototype</h3><p><a target="_blank" rel="noopener" href="https://i.imgur.com/ElLOva5.png"><img src="https://i.imgur.com/ElLOva5.png" alt="Difuse Prototype"></a></p>
+<p>The initial prototype was rough, nothing was really figured out well. It only had a few functional pages, and the code was a mess. However, it was enough to get the idea across, and it was enough to get the ball rolling.</p>
+<h3 id="Where-We-Are-Now"><a href="#Where-We-Are-Now" class="headerlink" title="Where We Are Now"></a>Where We Are Now</h3><p>If I had to list out every feature that Difuse has, this blog post would be far too long. Instead, I’ll list out some of the more notable features that I think are going to be useful to people almost universally.</p>
+<h3 id="Everything-is-just-a-click-away"><a href="#Everything-is-just-a-click-away" class="headerlink" title="Everything is just a click away"></a>Everything is just a click away</h3><p>Be it configuring your PPPoE connection or WiFi AP, everything is just a click away. No more digging through menus to find what you’re looking for. Let’s look at the WiFi AP configuration page as the first example:</p>
+<p><a target="_blank" rel="noopener" href="https://i.imgur.com/vAeVJDR.png"><img src="https://i.imgur.com/vAeVJDR.png" alt="Difuse WiFi AP Configuration"></a></p>
+<p>Now let’s go through a little bit of what we’re very excited about.</p>
+<h2 id="Adguard-Home"><a href="#Adguard-Home" class="headerlink" title="Adguard Home"></a>Adguard Home</h2><p>Adguard is a DNS-based ad blocker that can be used to block ads on your entire network. It’s a great way to block ads on your entire network without having to install ad blockers on every device. It’s also a great way to block ads on devices that don’t support ad blockers, like smart TVs and game consoles. The integration fits nicely in an iframe, and all the updates are done along with the full firmware (which is only about 60 megabytes all in)</p>
+<p><a target="_blank" rel="noopener" href="https://i.imgur.com/WnddSN1.png"><img src="https://i.imgur.com/WnddSN1.png" alt="Difuse Adguard Home"></a></p>
+<h2 id="Hassle-free-policy-based-routes"><a href="#Hassle-free-policy-based-routes" class="headerlink" title="Hassle-free policy based routes"></a>Hassle-free policy based routes</h2><p>For some reason my ISP blocks access to <strong>raw.githubusercontent.com</strong> and as a full time developer that sucks, I dont want to enable and disable a VPN or connect to one indefinitely on each of my servers&#x2F;PC that wants to access it, I want it to <em>just work</em>. On plain openwrt there are some nifty tricks that you can do to achieve the same thing (MWAN3, PBR are a few of them) but I bet you can’t do it this fast.</p>
+<video width="100%" height="100%" controls>
+  <source src="https://i.imgur.com/yRfpfqS.mp4" type="video/mp4">
+</video>
+
+<h2 id="Simple-yet-powerful-firewall"><a href="#Simple-yet-powerful-firewall" class="headerlink" title="Simple yet powerful firewall"></a>Simple yet powerful firewall</h2><p>Difuse’s firewall is designed for simplicity and power, built on nftables for high performance. Key features include:</p>
+<ul>
+<li><strong>Simple “Aliases”</strong>: Similar to OPNSense, allowing lists of IPs and GeoIP support for Traffic Rules.</li>
+<li><strong>Bandwidth Control</strong>: Limit bandwidth for MAC or IP addresses, ideal for managing data caps or device-specific bandwidth.</li>
+<li><strong>Simple Intrusion Prevention</strong>: Similar to fail2ban, useful for blocking brute-force attacks.</li>
+<li><strong>One-to-one NAT</strong>: Utilize multiple IPv4 addresses with internal IP mapping, powered by nftables.</li>
+</ul>
+<p><img src="https://i.imgur.com/oiODhba.png" alt="Difuse Firewall"><br><img src="https://i.imgur.com/95ztNjv.png" alt="Difuse Firewall Aliases"></p>
+<h2 id="Multiple-VPN-Support"><a href="#Multiple-VPN-Support" class="headerlink" title="Multiple VPN Support"></a>Multiple VPN Support</h2><p>Difuse currently supports WireGuard, IPSec, and Tailscale, with OpenVPN coming soon. Features include:</p>
+<ul>
+<li><strong>Fast Setup</strong>: WireGuard server setup in under 30 seconds, client addition in less than 5.</li>
+<li><strong>Ease of Use</strong>: Tailscale and IPSec setup is straightforward.</li>
+</ul>
+<video width="100%" height="100%" controls>
+  <source src="https://i.imgur.com/1HVFaSC.mp4" type="video/mp4">
+</video>
+
+<h2 id="Let’s-Encrypt-Certificates-amp-Dynamic-DNS"><a href="#Let’s-Encrypt-Certificates-amp-Dynamic-DNS" class="headerlink" title="Let’s Encrypt Certificates &amp; Dynamic DNS"></a>Let’s Encrypt Certificates &amp; Dynamic DNS</h2><p>Difuse simplifies the creation of valid TLS certificates using a wrapper around <a href="acme.sh">acme.sh</a>. Features include:</p>
+<ul>
+<li><strong>Easy Certificate Creation</strong>: Just enter your domain and click a button.</li>
+<li><strong>Dynamic DNS with Difuse Box</strong>: Free dynamic DNS domain for Difuse Box owners.</li>
+</ul>
+<p><img src="https://i.imgur.com/vzq4aoy.png" alt="Difuse ACME"></p>
+<h2 id="Additional-Services"><a href="#Additional-Services" class="headerlink" title="Additional Services"></a>Additional Services</h2><p>New services added in Difuse:</p>
+<ul>
+<li><strong>Samba</strong>: Easy management of Samba shares via web interface. You can use an M.2 SSD or USB drive for storage and share it over the network.</li>
+<li><strong>TOR</strong>: One-click TOR proxy setup for selective .onion domain access.</li>
+<li><strong>IPFS</strong>: Set up an IPFS gateway on a storage device and use that as a gateway network-wide.</li>
+<li><strong>Bandwidth Monitoring and DPI Dashboard</strong>: Comprehensive per-device bandwidth monitoring and DPI dashboard. The DPI dashboard right now supports only analytics but we’re working on adding more features to it.</li>
+</ul>
+<h2 id="PBX-Features"><a href="#PBX-Features" class="headerlink" title="PBX Features"></a>PBX Features</h2><p>Difuse’s PBX offers:</p>
+<ul>
+<li><strong>Remote Provisioning for Extensions</strong></li>
+<li><strong>CDR with Statistics and Call Recording</strong></li>
+<li><strong>Simple Flash Operator Panel</strong></li>
+<li><strong>Unlimited Extensions Without Licensing Fees</strong></li>
+<li><strong>4G LTE Module Support</strong>: For calls and SMS.</li>
+</ul>
+<h2 id="Upcoming-Developments"><a href="#Upcoming-Developments" class="headerlink" title="Upcoming Developments"></a>Upcoming Developments</h2><ul>
+<li><strong>Advanced DPI with SD-WAN Features</strong>: Enhancements in progress.</li>
+<li><strong>New DMSBG-100 Version</strong>: Upcoming model with a stronger CPU, WiFi 7, and more.</li>
+</ul>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p><img src="https://i.imgur.com/vKF3I9v.png" alt="Difuse Dashboard"></p>
+<p>We’ve been diligently working on Difuse for a substantial period, quietly refining our product. During this time, we’ve provided our device to various customers, some managing over 80+ devices seamlessly. As we celebrate the first anniversary of this project, our excitement is palpable. The journey of Difuse so far has been a source of immense pride for our team, and we look forward to the opportunities that lie ahead.</p>
+<p>To discover more about Difuse, we invite you to visit our website at <a target="_blank" rel="noopener" href="https://difuse.io/">difuse.io</a>, or engage with us and our community on our <a target="_blank" rel="noopener" href="https://discord.gg/3rSypcJeP7">Discord server</a>. For any inquiries or direct communication with our team, please email me at <a href="mailto:hayzam@difuse.io">hayzam@difuse.io</a>.</p>
+<p>We are also thrilled to announce that we are growing our team! If you are passionate about cutting-edge technology and keen to contribute to an evolving project, we encourage you to join us. For more details about career opportunities, please visit our website or get in touch via email.</p>
+
+  </div>
+</article>
+
+
+    <div class="blog-post-comments">
+        <div id="utterances_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </div>
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="http://github.com/hayzamjs">Projects</a></li>
+         
+          <li><a href="/Tips-n-Tricks/">Tips</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#The-Initial-Setup-at-Alchemilla-io"><span class="toc-number">1.</span> <span class="toc-text">The Initial Setup at Alchemilla.io</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Confronting-the-Challenges"><span class="toc-number">2.</span> <span class="toc-text">Confronting the Challenges</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Tackling-Hardware-Issues"><span class="toc-number">2.1.</span> <span class="toc-text">Tackling Hardware Issues</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Software-Struggles"><span class="toc-number">2.2.</span> <span class="toc-text">Software Struggles</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Exploring-Alternative-Solutions"><span class="toc-number">3.</span> <span class="toc-text">Exploring Alternative Solutions</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Evaluating-New-Devices"><span class="toc-number">3.1.</span> <span class="toc-text">Evaluating New Devices</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Realizing-Software%E2%80%99s-Central-Role"><span class="toc-number">4.</span> <span class="toc-text">Realizing Software’s Central Role</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#The-Intuitiveness-Dilemma"><span class="toc-number">4.1.</span> <span class="toc-text">The Intuitiveness Dilemma</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Collaborative-Efforts-in-Innovation"><span class="toc-number">5.</span> <span class="toc-text">Collaborative Efforts in Innovation</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Venturing-into-Multi-Service-Business-Gateway"><span class="toc-number">5.1.</span> <span class="toc-text">Venturing into Multi-Service Business Gateway</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Hardware-Considerations"><span class="toc-number">5.1.1.</span> <span class="toc-text">Hardware Considerations</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Software-Perspectives"><span class="toc-number">5.1.2.</span> <span class="toc-text">Software Perspectives</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Introducing-Difuse"><span class="toc-number">6.</span> <span class="toc-text">Introducing Difuse</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Developing-a-New-Interface"><span class="toc-number">6.1.</span> <span class="toc-text">Developing a New Interface</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#The-Initial-Prototype"><span class="toc-number">6.2.</span> <span class="toc-text">The Initial Prototype</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Where-We-Are-Now"><span class="toc-number">6.3.</span> <span class="toc-text">Where We Are Now</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Everything-is-just-a-click-away"><span class="toc-number">6.4.</span> <span class="toc-text">Everything is just a click away</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Adguard-Home"><span class="toc-number">7.</span> <span class="toc-text">Adguard Home</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hassle-free-policy-based-routes"><span class="toc-number">8.</span> <span class="toc-text">Hassle-free policy based routes</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Simple-yet-powerful-firewall"><span class="toc-number">9.</span> <span class="toc-text">Simple yet powerful firewall</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Multiple-VPN-Support"><span class="toc-number">10.</span> <span class="toc-text">Multiple VPN Support</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Let%E2%80%99s-Encrypt-Certificates-amp-Dynamic-DNS"><span class="toc-number">11.</span> <span class="toc-text">Let’s Encrypt Certificates &amp; Dynamic DNS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Additional-Services"><span class="toc-number">12.</span> <span class="toc-text">Additional Services</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PBX-Features"><span class="toc-number">13.</span> <span class="toc-text">PBX Features</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Upcoming-Developments"><span class="toc-number">14.</span> <span class="toc-text">Upcoming Developments</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Conclusion"><span class="toc-number">15.</span> <span class="toc-text">Conclusion</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://hayzam.com/2023/11/17/Replacing-My-Home-Office-Lab-with-One-Box/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://hayzam.com/2023/11/17/Replacing-My-Home-Office-Lab-with-One-Box/&text=Replacing My Home/Office Lab with One Box"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://hayzam.com/2023/11/17/Replacing-My-Home-Office-Lab-with-One-Box/&title=Replacing My Home/Office Lab with One Box"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://hayzam.com/2023/11/17/Replacing-My-Home-Office-Lab-with-One-Box/&is_video=false&description=Replacing My Home/Office Lab with One Box"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Replacing My Home/Office Lab with One Box&body=Check out this article: https://hayzam.com/2023/11/17/Replacing-My-Home-Office-Lab-with-One-Box/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://hayzam.com/2023/11/17/Replacing-My-Home-Office-Lab-with-One-Box/&title=Replacing My Home/Office Lab with One Box"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://hayzam.com/2023/11/17/Replacing-My-Home-Office-Lab-with-One-Box/&title=Replacing My Home/Office Lab with One Box"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://hayzam.com/2023/11/17/Replacing-My-Home-Office-Lab-with-One-Box/&title=Replacing My Home/Office Lab with One Box"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://hayzam.com/2023/11/17/Replacing-My-Home-Office-Lab-with-One-Box/&title=Replacing My Home/Office Lab with One Box"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://hayzam.com/2023/11/17/Replacing-My-Home-Office-Lab-with-One-Box/&name=Replacing My Home/Office Lab with One Box&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://hayzam.com/2023/11/17/Replacing-My-Home-Office-Lab-with-One-Box/&t=Replacing My Home/Office Lab with One Box"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2022-2023
+    Hayzam Sherif
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="http://github.com/hayzamjs">Projects</a></li><!--
+     --><!--
+       --><li><a href="/Tips-n-Tricks/">Tips</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+ 
+  <link
+    rel="preload"
+    href="/lib/font-awesome/css/all.min.css"
+    as="style"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript
+    ><link
+      rel="stylesheet"
+      href="/lib/font-awesome/css/all.min.css"
+  /></noscript>
+
+
+    <!-- jquery -->
+ 
+  
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+
+
+
+<!-- clipboard -->
+
+   
+    
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+  <script async defer data-website-id="c6ed6867-9b1f-474d-82ad-075972a5aa2b" src="https://analytics.hayzam.com/umami.js"></script>
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+    <script type="text/javascript">
+      var utterances_repo = 'hayzamjs/hayzam.com';
+      var utterances_issue_term = 'pathname';
+      var utterances_label = 'Comment';
+      var utterances_theme = 'github-dark';
+
+      (function(){
+          var script = document.createElement('script');
+
+          script.src = 'https://utteranc.es/client.js';
+          script.setAttribute('repo', utterances_repo);
+          script.setAttribute('issue-term', 'pathname');
+          script.setAttribute('label', utterances_label);
+          script.setAttribute('theme', utterances_theme);
+          script.setAttribute('crossorigin', 'anonymous');
+          script.async = true;
+          (document.getElementById('utterances_thread')).appendChild(script);
+      }());
+  </script>
+
+</body>
+</html>
