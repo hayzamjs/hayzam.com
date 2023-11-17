@@ -177,6 +177,7 @@ umami_analytics:
   enabled: true
   id: c6ed6867-9b1f-474d-82ad-075972a5aa2b
   host: https://analytics.hayzam.com
+  script_name: umami.js
 
 # Fill in you Gravatar email or hash if you want to use your gravatar as the
 # logo and/or favicons of you website.
